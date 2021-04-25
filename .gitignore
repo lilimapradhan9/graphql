@@ -3,3 +3,5 @@
 */Dependencies
 */bin
 */obj
+.config
+*/movies.db

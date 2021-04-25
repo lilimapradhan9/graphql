@@ -1,14 +1,23 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace graphql.Domain
 {
     public class Movie
     {
-        public Movie(string title, Director director)
+        public Movie()
+        {
+        }
+
+        public Movie(string title, string director)
         {
             Title = title;
             Director = director;
         }
 
-        public string Title { get; }
-        public Director Director { get; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string Id { get; set; }
+
+        public string Title { get; set; }
+        public string Director { get; set; }
     }
 }
